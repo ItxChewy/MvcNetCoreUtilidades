@@ -1,0 +1,13 @@
+﻿<h1>Subir Fichero Net Core</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+	<label>Selecccione un fichero</label>
+	<input type="file" name="fichero" class="form-control" />
+	<br />
+	<button class="btn">Subir fichero</button>
+</form>
+
+<h2 style="color:olive">@ViewData["MENSAJE"]</h2>
+<h2 style="color:rebeccapurple">@ViewData["PATH"]</h2>
+<img src="@ViewData["PATH"]"  style="width:150px;height:150px"/>
