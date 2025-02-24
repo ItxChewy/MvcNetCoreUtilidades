@@ -30,6 +30,23 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="UploadFiles" asp-action="SubirFichero">UploadFiles</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Mails" asp-action="SendMail">Mails</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="cifradosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cifrados
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="cifradosDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Cifrados" asp-action="CifradoBasico">Cifrado Basico</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Cifrados" asp-action="CifradoEficiente">Cifrado Eficiente</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
