@@ -6,6 +6,25 @@ namespace MvcNetCoreUtilidades.Controllers
 {
     public class HomeController : Controller
     {
+
+        public IActionResult LogIn()
+        {
+            return View();
+
+        }
+        [HttpPost]
+        public IActionResult LogIn(string usuario)
+        {
+            HttpContext.Session.SetString("USUARIO", usuario);
+            ViewData["mensaje"] = "usuario validado";
+            return View();
+
+        }
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Remove("USUARIO");
+            return RedirectToAction("Index");
+        }
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

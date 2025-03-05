@@ -24,6 +24,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coches" asp-action="Index">Coches AJAX</a>
+                        </li>
+                        <li class="nav-item">
+                            @await Component.InvokeAsync("MenuCoches")
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Caching" asp-action="Index">Index Caching</a>
                         </li>
                         <li class="nav-item">
@@ -49,6 +55,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <partial name="_MenuUsuario" />
                     </ul>
                 </div>
             </div>

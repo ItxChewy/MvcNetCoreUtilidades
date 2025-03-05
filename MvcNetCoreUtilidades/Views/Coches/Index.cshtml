@@ -1,0 +1,28 @@
+﻿@section Scripts{
+	<script>
+		$(document).ready(function(){
+			$("#botonloadcoches").click(function(){
+				$("#containercoches").load("/Coches/_CochesPartial");
+			});
+			$("#botonbuscarcoche").click(function(){
+				var id = $("#cajaidcoche").val();
+				var request = "/Coches/_CochesPost?idcoche=" + id;
+				$("#detallescoche").load(request);
+			});
+		});
+	</script>
+}
+
+<h1>Index de AJAX COCHES</h1>
+
+<label>Id coche a buscar</label>
+<input type="text" id="cajaidcoche" class="form-control" />
+<button id="botonbuscarcoche" class="btn btn-danger">
+	Busacr coche
+</button>
+<div id="detallescoche"></div>
+
+<button id="botonloadcoches" class="btn btn-warning">
+	Load Coches Ajax
+</button>
+<div id="containercoches" class="bg-secondary bg-opacity-50"></div>

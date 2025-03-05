@@ -1,4 +1,5 @@
 using MvcNetCoreUtilidades.Helpers;
+using MvcNetCoreUtilidades.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton < HelperPathProvider>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddTransient<RepositoryCoches>();
+builder.Services.AddSession();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,6 +31,8 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+
+app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

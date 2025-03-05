@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MvcNetCoreUtilidades.Models.Coche>
+
+@{
+	ViewData["Title"] = "_CochesPartial";
+}
+
+<h1>Coches con AJAX</h1>
+
+<table class="table table-danger">
+	<thead>
+		<tr>
+			<th>
+				IDCOCHE
+			</th>
+			<th>
+				COCHE
+			</th>
+			<th>
+				IMAGEN
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.IdCoche)
+				</td>
+				<td>
+					@item.Marca @item.Modelo
+				</td>
+
+				<td>
+					<img src="@item.Imagen" style="width:150px;height:150px" />
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
